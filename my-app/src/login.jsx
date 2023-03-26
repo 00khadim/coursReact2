@@ -2,10 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import './App.css'
 import './index.css'
+import Header from './Header'
+
 
 function Login() {
     const [prenom, setPrenom] = useState('');
     const [password, setPassword] = useState("");
+    
     const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -15,6 +18,7 @@ function Login() {
     };
     return (
         <div>
+            <Header />
             <h1 className="text-4xl">Login</h1><br />
 
             <div className='flex justify-center '>

@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Header'
 import Articles from './Articles'
 import Login from './login'
 import './index.css'
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -23,15 +22,14 @@ function App() {
 
   return (
     <div className="App bg-[#8080df]">
-      <div className='flex justify-center m-12'>
-        <div className='m-20'>
-
-          <Header
-          />
-          <Articles
-          />
-          <br />
-          <Login/>
+      <div className='flex justify-center m-2'>
+        <div className='m-2'>
+        <Routes>
+          <Route path='/' element={<Articles />}/>
+          <Route path='/Login' element={<Login />}/>
+        </Routes>
+        
+          
         </div>
 
       </div>
