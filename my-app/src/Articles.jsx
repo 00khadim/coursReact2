@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
-import Header from './Header'
-import Home from './Home'
+import { useState } from 'react'
 import Bay from './img/bay.png';
 import Black from './img/black.png';
 import Blue from './img/blue.png';
@@ -16,11 +15,11 @@ function Articles() {
 
     return (
         <div>
-            <Header />
-            <Home />
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4 underline decoration-sky-50'>Articles</h1>
+            
+            
+            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4 underline decoration-sky-50 mt-6'>Articles</h1>
             <div className='container mx-auto'>
-                <div className='grid grid-rows-2 grid-flow-col gap-3'>
+                <div className='grid grid-rows-2 grid-flow-col gap-3 m-10'>
                    
                     <div>
                         <img className='' src={Bay} alt="pulls color baige" />
