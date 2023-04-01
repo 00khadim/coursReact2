@@ -2,24 +2,18 @@ import React from 'react';
 import './index.css';
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-
-import Bay from './img/bay.png';
-import Black from './img/black.png';
-import Blue from './img/blue.png';
-import Greenv2 from './img/greenv2.jpg';
-import Green from './img/green.png';
-import Bluev2 from './img/bluev2.jpg';
-import Gris from './img/gris.png';
-import Brown from './img/Brown.png';
+import { useParams } from 'react-router-dom';
 import { data } from 'autoprefixer';
 
 
 function Articles() {
+    const params = useParams()
+    console.log(params);
     const [dataArr, setDataArr] = useState([                        //Crée un variable en tableau qui prend tout le tache
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/varsity-premium-hoodie-beige-1_800x.png?v=1678365959', name: "Pulls Baige ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 50, id: uuidv4() },          // uuidv4 c'est un id unique!
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/cloudsblack2_800x.png?v=1677173705', name: "Pulls Noire ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 75, id: uuidv4() },          // uuidv4 c'est un id unique!
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/varsity-premium-hoodie-blue-1_86230bdf-ff15-490a-ad33-08c76dc129e2_800x.png?v=1678365786', name: "Pulls Blue ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 30, id: uuidv4() },          // uuidv4 c'est un id unique!
-        { img: 'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/varsity-premium-hoodie-green-1_800x.png?v=1678365447', name: "Pulls Vert ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 40, id: uuidv4() },          // uuidv4 c'est un id unique!
+        { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/varsity-premium-hoodie-green-1_800x.png?v=1678365447', name: "Pulls Vert ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 40, id: uuidv4() },          // uuidv4 c'est un id unique!
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/hoodiegreen2_800x.jpg?v=1677058403', name: "Pulls Baige ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 45, id: uuidv4() },          // uuidv4 c'est un id unique!
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/hoodieblue2_800x.jpg?v=1677181181', name: "Pulls Noire ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 30, id: uuidv4() },          // uuidv4 c'est un id unique!
         { img:'https://cdn.shopify.com/s/files/1/0025/3725/9054/products/varsityblack1_643f5229-cd44-42e5-80e3-db3f5bd4486a_800x.png?v=1677172566', name: "Pulls Blue ", description: "Ce look avec jeans et baskets confortables est parfait pour rencontrer les parents de votre petite amie tout en recherchant des champignons dans les bois.", prix: 74, id: uuidv4() },          // uuidv4 c'est un id unique!
@@ -29,6 +23,7 @@ function Articles() {
     
     return (
         <div>
+            <p>{params.id}</p>
 
             <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4 underline decoration-sky-50 mt-6'>Articles</h1>
             <div className='container mx-auto'>
@@ -37,6 +32,8 @@ function Articles() {
                         return (
                             <a href=''>
                                 <img className='' src={item.img} alt={item.name} />
+                                {/* <p className="font-bold">{item.name}{item.prix}€</p> */}
+
                                 <p className="font-bold">{item.prix } €</p>
                             </a>
                         )

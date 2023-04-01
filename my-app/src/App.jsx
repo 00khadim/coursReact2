@@ -7,6 +7,7 @@ import Home from './Home'
 import Login from './Login'
 import './index.css'
 import { Routes, Route } from 'react-router-dom'
+import NotFound from './NotFound'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -32,8 +33,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/articles' element={<Articles />} />
+            <Route path='/articles/:id' element={<Articles />} />
             <Route path='/login' element={<Login />} />
-            
+
+            <Route path='*' element={<NotFound/>} />
             
           </Routes>
 
