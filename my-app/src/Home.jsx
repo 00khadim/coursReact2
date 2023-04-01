@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Articles from './Articles'
 import Fond from './img/Fond.gif'
 import Login from './Login'
 import { Link, NavLink } from "react-router-dom"
@@ -18,8 +18,8 @@ function Home() {
             Voir produit
           </NavLink>
         </div>
+        
 
-       
       </div>
 
     </div>
