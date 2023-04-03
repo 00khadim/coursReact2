@@ -1,7 +1,5 @@
 import React from 'react'
-import Articles from './Articles'
-import Fond from './img/Fond.gif'
-import Login from './Login'
+import Fond from '../img/Fond.gif'
 import { Link, NavLink } from "react-router-dom"
 
 

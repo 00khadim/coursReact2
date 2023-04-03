@@ -1,5 +1,6 @@
 import React from 'react'
-import Panier from './img/panier.png'
+import Panier from '../img/panier.png'
+
 import { Link, NavLink } from "react-router-dom"
 
 
@@ -24,12 +25,13 @@ function Header() {
       <NavLink to={"./Login"}
         style={({ isActive }) => ({ color: isActive ? "#d1d1d1" : "" })}
         className="m-4 p-2 font-bold">Login</NavLink>
-      <NavLink to={"Sign up"}
+      <NavLink to={"./SignUp"}
         style={({ isActive }) => ({ color: isActive ? "#d1d1d1" : "" })}
         className="m-4 p-2 font-bold">Sign up</NavLink>
       <NavLink to={"Panier"}
         style={({ isActive }) => ({ color: isActive ? "#d1d1d1" : "" })}
         className="m-4 p-2 font-bold">Panier</NavLink>
+        
     </nav>
 
   )

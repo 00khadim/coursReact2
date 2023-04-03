@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
-import './App.css'
-import './index.css'
-import Header from './Header'
+import React, {useState } from 'react'
+import '../App.css'
+import '../index.css'
 import { Routes, Route } from 'react-router-dom'
 
 
@@ -11,8 +9,12 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState("");
 
+    const [validation, setValidation] = useState("");
+
+  
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(email,password);
     }
     const changeEmail = (e) => {
         setEmail(e.target.value);
@@ -40,6 +42,7 @@ function Login() {
 
                             <input
                                 className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline mb-"
+                                ref={addInputs}
                                 id="email"
                                 name="email"
                                 type="email"
@@ -63,6 +66,7 @@ function Login() {
                                 value={password}
                                 onChange={changePassword}
                             />
+                            <p className='text-red'>{validation}</p>
 
                         </div>
                         <div className="flex items-center justify-center">
